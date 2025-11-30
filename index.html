@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Nkanyane | Senior Software Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Lucide Icons for the contact section specifically -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    colors: {
+                        'neon-blue': '#3b82f6',
+                        'neon-purple': '#8b5cf6',
+                        'dark-bg': '#0f172a',
+                        'card-bg': '#1e293b',
+                        'fade-blue': 'rgba(85, 112, 215, 0.35)',
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3b82f6; 
+            border-radius: 4px;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-slate-300 font-sans selection:bg-neon-blue selection:text-white overflow-x-hidden">
+
+    <!-- Moving Background Elements -->
+    <div class="fixed inset-0 w-full h-full overflow-hidden -z-10">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-neon-blue rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob"></div>
+        <div class="absolute top-0 right-1/4 w-96 h-96 bg-neon-purple rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-32 left-1/3 w-96 h-96 bg-emerald-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob animation-delay-4000"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-dark-bg/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <span class="font-mono text-xl font-bold text-white tracking-tighter">&lt;HN/&gt;</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="hover:text-neon-blue transition-colors px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="#about" class="hover:text-neon-blue transition-colors px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        <a href="#skills" class="hover:text-neon-blue transition-colors px-3 py-2 rounded-md text-sm font-medium">Skills</a>
+                        <a href="#experience" class="hover:text-neon-blue transition-colors px-3 py-2 rounded-md text-sm font-medium">Experience</a>
+                        <a href="#contact" class="bg-neon-blue/10 text-neon-blue hover:bg-neon-blue hover:text-white transition-all px-4 py-2 rounded-md text-sm font-medium border border-neon-blue/50">Let's Talk</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-16 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-start justify-center">
+            <p class="font-mono text-neon-blue mb-4 reveal">Hi, my name is</p>
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight reveal" style="transition-delay: 100ms;">
+                Buhle Nkanyane.
+            </h1>
+            <h2 class="text-4xl md:text-6xl font-bold text-slate-400 mb-6 reveal" style="transition-delay: 200ms;">
+                I build robust backend solutions.
+            </h2>
+            <p class="max-w-xl text-lg text-slate-400 mb-8 leading-relaxed reveal" style="transition-delay: 300ms;">
+                I am a <span class="text-white font-semibold">Senior Software Engineer</span> and 6th Industrial enthusiast based in South Africa. I specialize in designing scalable architectures, crafting clean code in Java & PHP, and exploring the frontiers of <span class="text-neon-blue">Local LLMs & AI</span>.
+            </p>
+            <div class="flex gap-4 reveal" style="transition-delay: 400ms;">
+                <a href="#contact" class="px-8 py-3 bg-neon-blue text-white rounded font-medium hover:bg-blue-600 transition-all shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] transform hover:-translate-y-1">
+                    Get in Touch
+                </a>
+                <a href="https://medium.com/@hthabang23" target="_blank" class="px-8 py-3 border border-slate-600 rounded font-medium hover:border-neon-blue hover:text-neon-blue transition-all">
+                    Read my Articles
+                </a>
+            </div>
+        </div>
+        
+        <!-- Animated Scroll Down Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-slate-500">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white/5 backdrop-blur-sm border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="text-neon-blue font-mono">01.</span>
+                        <h2 class="text-3xl font-bold text-white">About Me</h2>
+                        <div class="h-px bg-slate-700 w-1/3 ml-4"></div>
+                    </div>
+                    <p class="text-slate-400 mb-4 text-lg">
+                        I am a professional software engineer passionate about <span class="text-white">design patterns</span> and crafting robust solutions. My journey has taken me through various stacks, from enterprise Java systems to modern PHP/Laravel applications.
+                    </p>
+                    <p class="text-slate-400 mb-6 text-lg">
+                        Currently, I am deeply interested in the intersection of traditional software engineering and AI, writing extensively about running <span class="text-neon-blue">LLMs locally</span> and integrating AI agents into web architectures.
+                    </p>
+                    <div class="font-mono text-sm text-neon-blue space-y-3">
+                        <p>> Current Location: Cape Tow, SA</p>
+                        <div class="flex items-center gap-3">
+                            <span>> Status:</span>
+                            <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                                <span class="relative flex h-2.5 w-2.5">
+                                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                                </span>
+                                <span class="text-emerald-400 text-xs font-semibold tracking-wide">AVAILABLE FOR CONSULTING</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative group bg-[rgba(85,112,215,0.6)] shadow-[0_0_15px_rgba(85,112,215,0.5)] reveal" style="transition-delay: 200ms;">
+                    <div class="absolute inset-0 border-2 border-[rgba(85,112,215,0.6)] shadow-[0_0_15px_rgba(85,112,215,0.4)] transform translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-300"></div>
+                        <div class="relative bg-[rgba(85,112,215,0.6)] brightness-150 rounded p-1 overflow-hidden">
+                        <div class="bg-gradient-to-br from-slate-700 to-slate-900 w-full flex items-center justify-center">
+                                <img class="w-full h-auto" src="my_pic.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12 reveal">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="text-neon-blue font-mono">02.</span>
+                    <h2 class="text-3xl font-bold text-white">Technical Arsenal</h2>
+                    <div class="h-px bg-slate-700 w-1/3 ml-4"></div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Skill Cards -->
+                <div class="p-6 bg-slate-800/50 border border-white/5 rounded hover:border-neon-blue/50 hover:bg-slate-800 transition-all group reveal hover:-translate-y-2">
+                    <div class="text-neon-blue text-3xl mb-4 font-mono"><i class="fa-brands fa-java"></i></div>
+                    <h3 class="text-white font-semibold mb-2">Java Ecosystem</h3>
+                    <p class="text-sm text-slate-400">Spring Boot, Java EE</p>
+                </div>
+                <div class="p-6 bg-slate-800/50 border border-white/5 rounded hover:border-neon-blue/50 hover:bg-slate-800 transition-all group reveal hover:-translate-y-2" style="transition-delay: 100ms;">
+                    <div class="text-neon-purple text-3xl mb-4 font-mono"><i class="fa-brands fa-php"></i></div>
+                    <h3 class="text-white font-semibold mb-2">PHP & Laravel</h3>
+                    <p class="text-sm text-slate-400">Modern MVC, Patterns</p>
+                </div>
+                <div class="p-6 bg-slate-800/50 border border-white/5 rounded hover:border-neon-blue/50 hover:bg-slate-800 transition-all group reveal hover:-translate-y-2" style="transition-delay: 200ms;">
+                    <div class="text-emerald-400 text-3xl mb-4 font-mono"><i class="fa-solid fa-brain"></i></div>
+                    <h3 class="text-white font-semibold mb-2">AI & LLMs</h3>
+                    <p class="text-sm text-slate-400">Ollama, RAG, Local AI</p>
+                </div>
+                <div class="p-6 bg-slate-800/50 border border-white/5 rounded hover:border-neon-blue/50 hover:bg-slate-800 transition-all group reveal hover:-translate-y-2" style="transition-delay: 300ms;">
+                    <div class="text-orange-400 text-3xl mb-4 font-mono"><i class="fa-brands fa-aws"></i></div>
+                    <h3 class="text-white font-semibold mb-2">DevOps</h3>
+                    <p class="text-sm text-slate-400">Docker, AWS, CI/CD</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insights Section -->
+    <section id="insights" class="py-24 bg-white/5 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12 reveal">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="text-neon-blue font-mono">03.</span>
+                    <h2 class="text-3xl font-bold text-white">Insights & Writings</h2>
+                    <div class="h-px bg-slate-700 w-1/3 ml-4"></div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <a href="https://medium.com/@hthabang23" target="_blank" class="group relative block h-full reveal">
+                    <div class="relative h-full bg-slate-800 border border-white/10 p-8 rounded-lg overflow-hidden group-hover:-translate-y-2 transition-transform duration-300">
+                        <div class="flex justify-between items-start mb-6">
+                            <i class="fa-regular fa-folder text-4xl text-neon-blue"></i>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-slate-400 hover:text-neon-blue"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-neon-blue transition-colors">Local LLM Architecture</h3>
+                        <p class="text-slate-400 text-sm mb-4">A comprehensive guide on setting up Ollama and Open WebUI to run models like Deepseek-R1 locally.</p>
+                    </div>
+                </a>
+                <a href="https://medium.com/@hthabang23" target="_blank" class="group relative block h-full reveal" style="transition-delay: 100ms;">
+                    <div class="relative h-full bg-slate-800 border border-white/10 p-8 rounded-lg overflow-hidden group-hover:-translate-y-2 transition-transform duration-300">
+                        <div class="flex justify-between items-start mb-6">
+                            <i class="fa-regular fa-folder text-4xl text-neon-purple"></i>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-slate-400 hover:text-neon-purple"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-neon-purple transition-colors">Repository Pattern in PHP</h3>
+                        <p class="text-slate-400 text-sm mb-4">Deep dive into abstracting data access layers to improve testability.</p>
+                    </div>
+                </a>
+                <a href="https://medium.com/@hthabang23" target="_blank" class="group relative block h-full reveal" style="transition-delay: 200ms;">
+                    <div class="relative h-full bg-slate-800 border border-white/10 p-8 rounded-lg overflow-hidden group-hover:-translate-y-2 transition-transform duration-300">
+                        <div class="flex justify-between items-start mb-6">
+                            <i class="fa-regular fa-folder text-4xl text-emerald-400"></i>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-slate-400 hover:text-emerald-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Laravel Session Security</h3>
+                        <p class="text-slate-400 text-sm mb-4">Best practices for securing user sessions and preventing common vulnerabilities.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW EXPERIENCE SECTION -->
+    <section id="experience" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-16 text-center reveal">
+                <div class="flex items-center justify-center gap-2 mb-4">
+                    <span class="text-neon-blue font-mono">04.</span>
+                    <h2 class="text-3xl font-bold text-white">Work Experience</h2>
+                </div>
+                <div class="h-1 w-20 bg-neon-blue mx-auto rounded"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto reveal">
+                <div class="relative">
+                    <!-- Timeline line -->
+                    <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-0.5 bg-slate-700"></div>
+                    
+                    <!-- Timeline items -->
+                    <div class="space-y-12">
+                        <!-- Item 1 -->
+                        <div class="timeline-item flex flex-col md:flex-row items-center group">
+                            <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right">
+                                <h3 class="text-xl font-bold text-white group-hover:text-neon-blue transition-colors">Senior Software Developer</h3>
+                                <p class="text-neon-blue font-mono text-sm mt-1">Johannesburg Tech Sector</p>
+                                <p class="text-slate-500 text-sm mt-1">2020 - Present</p>
+                            </div>
+                            <div class="w-4 h-4 rounded-full bg-neon-blue border-4 border-dark-bg z-10 shadow-[0_0_10px_rgba(59,130,246,0.6)]"></div>
+                            <div class="md:w-1/2 md:pl-12 mt-6 md:mt-0">
+                                <p class="text-slate-400 text-sm leading-relaxed bg-card-bg p-4 rounded border border-white/5 hover:border-neon-blue/30 transition-colors">
+                                    Lead development of enterprise applications using Java Spring Boot, PHP, and cloud technologies. Mentored junior developers and implemented clean architecture patterns.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 2 -->
+                        <div class="timeline-item flex flex-col md:flex-row items-center group">
+                            <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right order-2 md:order-1">
+                                <p class="text-slate-400 text-sm leading-relaxed bg-card-bg p-4 rounded border border-white/5 hover:border-neon-blue/30 transition-colors">
+                                    Developed full-stack web applications for various clients. Specialized in creating scalable RESTful APIs and integrating payment gateways.
+                                </p>
+                            </div>
+                            <div class="w-4 h-4 rounded-full bg-neon-purple border-4 border-dark-bg z-10 shadow-[0_0_10px_rgba(139,92,246,0.6)] order-1 md:order-2"></div>
+                            <div class="md:w-1/2 md:pl-12 mt-6 md:mt-0 order-3 md:order-3">
+                                <h3 class="text-xl font-bold text-white group-hover:text-neon-purple transition-colors">Full Stack Developer</h3>
+                                <p class="text-neon-purple font-mono text-sm mt-1">Freelance / Contract</p>
+                                <p class="text-slate-500 text-sm mt-1">2018 - 2020</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 3 -->
+                        <div class="timeline-item flex flex-col md:flex-row items-center group">
+                            <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right">
+                                <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">Junior Developer</h3>
+                                <p class="text-emerald-400 font-mono text-sm mt-1">StartUp Environment</p>
+                                <p class="text-slate-500 text-sm mt-1">2016 - 2018</p>
+                            </div>
+                            <div class="w-4 h-4 rounded-full bg-emerald-500 border-4 border-dark-bg z-10 shadow-[0_0_10px_rgba(16,185,129,0.6)]"></div>
+                            <div class="md:w-1/2 md:pl-12 mt-6 md:mt-0">
+                                <p class="text-slate-400 text-sm leading-relaxed bg-card-bg p-4 rounded border border-white/5 hover:border-emerald-400/30 transition-colors">
+                                    Started my career developing front-end interfaces and learning backend technologies. Contributed to multiple projects and gained foundational experience in SQL and Java.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW CONTACT SECTION -->
+    <section id="contact" class="py-24 bg-white/5 backdrop-blur-sm border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-16 text-center reveal">
+                <div class="flex items-center justify-center gap-2 mb-4">
+                    <span class="text-neon-blue font-mono">05.</span>
+                    <h2 class="text-3xl font-bold text-white">Get In Touch</h2>
+                </div>
+                <div class="h-1 w-20 bg-neon-blue mx-auto rounded"></div>
+            </div>
+
+            <div class="max-w-6xl mx-auto reveal">
+                <div class="flex flex-col md:flex-row gap-12">
+                    <!-- Left Column: Info -->
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-bold text-white mb-6">Let's Connect</h3>
+                        <p class="text-slate-400 mb-8 leading-relaxed">
+                            I'm always open to discussing new opportunities, creative ideas, or potential collaborations. Whether you need a consultant for Backend Architecture or just want to chat about AI.
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <!-- Email -->
+                            <div class="flex items-center group">
+                                <div class="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center mr-4 border border-white/10 group-hover:border-neon-blue/50 transition-colors">
+                                    <i data-lucide="mail" class="text-neon-blue w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white text-sm">Email</h4>
+                                    <a href="mailto:hthabang23@gmail.com" class="text-slate-400 hover:text-neon-blue transition-colors text-sm">hthabang23@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Location -->
+                            <div class="flex items-center group">
+                                <div class="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center mr-4 border border-white/10 group-hover:border-neon-blue/50 transition-colors">
+                                    <i data-lucide="map-pin" class="text-neon-blue w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white text-sm">Location</h4>
+                                    <p class="text-slate-400 text-sm">Cape Town, South Africa</p>
+                                </div>
+                            </div>
+
+                            <!-- Socials -->
+                            <div class="flex space-x-4 mt-8 pt-8 border-t border-white/5">
+                                <a href="https://www.linkedin.com/in/happy-nkanyane/" target="_blank" class="w-10 h-10 bg-slate-800 hover:bg-neon-blue text-white rounded flex items-center justify-center transition-all hover:-translate-y-1">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+                                <a href="https://github.com" target="_blank" class="w-10 h-10 bg-slate-800 hover:bg-white hover:text-black text-white rounded flex items-center justify-center transition-all hover:-translate-y-1">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                                <a href="https://medium.com/@hthabang23" target="_blank" class="w-10 h-10 bg-slate-800 hover:bg-green-600 text-white rounded flex items-center justify-center transition-all hover:-translate-y-1">
+                                    <i class="fa-brands fa-medium"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column: Form -->
+                    <div class="md:w-1/2">
+                        <form class="bg-card-bg p-8 rounded-xl border border-white/5 shadow-2xl">
+                            <div class="mb-6">
+                                <label for="name" class="block text-slate-400 text-sm mb-2 font-mono">Your Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 rounded bg-dark-bg border border-slate-700 text-white focus:outline-none focus:border-neon-blue focus:ring-1 focus:ring-neon-blue transition-all" placeholder="John Doe">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="email" class="block text-slate-400 text-sm mb-2 font-mono">Your Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 rounded bg-dark-bg border border-slate-700 text-white focus:outline-none focus:border-neon-blue focus:ring-1 focus:ring-neon-blue transition-all" placeholder="john@example.com">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="message" class="block text-slate-400 text-sm mb-2 font-mono">Your Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-3 rounded bg-dark-bg border border-slate-700 text-white focus:outline-none focus:border-neon-blue focus:ring-1 focus:ring-neon-blue transition-all" placeholder="Hello, I would like to discuss..."></textarea>
+                            </div>
+                            
+                            <button type="button" onclick="alert('Message feature simulated!')" class="w-full bg-neon-blue hover:bg-blue-600 text-white py-3 px-6 rounded font-medium transition-colors shadow-[0_0_20px_rgba(59,130,246,0.2)] hover:shadow-[0_0_30px_rgba(59,130,246,0.4)]">
+                                Send Message <i class="fa-solid fa-paper-plane ml-2"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-6 text-center text-slate-600 text-xs font-mono bg-dark-bg">
+        <p>Designed & Built by Happy Nkanyane</p>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Scroll Reveal Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
