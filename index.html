@@ -1,455 +1,188 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Nkanyane | Senior Software Engineer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <!-- Lucide Icons for the contact section specifically -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['Fira Code', 'monospace'],
-                    },
-                    colors: {
-                        'neon-blue': '#3b82f6',
-                        'neon-purple': '#8b5cf6',
-                        'dark-bg': '#0f172a',
-                        'card-bg': '#1e293b',
-                        'fade-blue': 'rgba(85, 112, 215, 0.35)',
-                    },
-                    animation: {
-                        'blob': 'blob 7s infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        blob: {
-                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <style>
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0f172a; 
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #3b82f6; 
-            border-radius: 4px;
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4ee">
+  <meta name="description" content="Thabang — software engineer and AI automation specialist building ecommerce systems, web applications and practical automation.">
+  <title>Thabang — Software Engineer & Automation Specialist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--paper:#f5f4ee;--ink:#1b2822;--muted:#69736c;--green:#234d3c;--green2:#dce7dc;--line:#d9ddd4;--white:#fffef9;--lime:#c5d86d;--serif:Georgia,"Times New Roman",serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif;line-height:1.6}a{color:inherit;text-decoration:none}button,a{ -webkit-tap-highlight-color:transparent}button{font:inherit}.wrap{width:min(1160px,calc(100% - 48px));margin:auto}.mono,.eyebrow,.tag,.nav-label{font-family:"DM Mono",monospace;text-transform:uppercase;letter-spacing:.09em;font-size:11px}.eyebrow{color:var(--green);display:flex;gap:12px;align-items:center}.eyebrow:before{content:"";width:24px;height:1px;background:currentColor}.topbar{position:sticky;top:0;z-index:20;background:rgba(245,244,238,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(217,221,212,.85)}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:11px;font-family:Manrope,sans-serif;font-weight:800;letter-spacing:-.05em;font-size:19px}.brand-mark{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--green);color:var(--paper);font-size:13px;letter-spacing:-.03em}.navlinks{display:flex;align-items:center;gap:28px;font-size:13px;color:#4e5a52}.navlinks a:hover{color:var(--green)}.nav-cta{border:1px solid var(--green);border-radius:3px;padding:10px 15px;color:var(--green);font-size:12px;font-weight:700}.menu-btn{display:none;background:none;border:1px solid var(--line);padding:8px 11px;border-radius:3px;color:var(--ink)}
+.hero{padding:88px 0 74px;border-bottom:1px solid var(--line);overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:65px;align-items:center}.hero h1{font-family:Manrope,sans-serif;font-size:clamp(48px,6.6vw,82px);line-height:1.02;letter-spacing:-.075em;font-weight:600;margin:24px 0 26px;max-width:720px}.hero h1 em{font-family:var(--serif);font-weight:400;color:var(--green);letter-spacing:-.07em}.intro{font-size:17px;line-height:1.8;color:#59645d;max-width:580px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-flex;align-items:center;gap:20px;padding:14px 18px;border-radius:3px;background:var(--green);color:white;font-size:13px;font-weight:700;border:1px solid var(--green);transition:transform .2s,background .2s}.btn:hover{transform:translateY(-2px);background:#18392b}.btn.secondary{background:transparent;color:var(--green)}.btn.secondary:hover{background:var(--green2)}.arrow{font-size:17px;line-height:1}.hero-note{display:flex;gap:13px;align-items:center;margin-top:42px;color:var(--muted);font-size:12px}
+.hero-art{position:relative;min-height:430px;background:#e7e9df;border-radius:3px;padding:22px;overflow:hidden}.art-top{display:flex;justify-content:space-between;align-items:center;font-size:10px;color:#647168}.art-top span{font-family:"DM Mono",monospace;text-transform:uppercase;letter-spacing:.1em}.art-window{position:absolute;left:11%;right:11%;top:18%;bottom:12%;background:var(--white);box-shadow:0 20px 55px #263d2b18;border:1px solid #dce0d6;padding:22px;transform:rotate(-2deg)}.window-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e3e5de;padding-bottom:12px}.window-logo{font-family:Manrope;font-size:12px;font-weight:800}.window-dots{display:flex;gap:4px}.window-dots i{width:5px;height:5px;border-radius:50%;background:#bdc5ba}.window-body{display:grid;grid-template-columns:.85fr 1.15fr;gap:14px;padding-top:24px}.window-copy small{font:9px "DM Mono";color:#69806b;text-transform:uppercase}.window-copy h3{font:600 24px/1.1 Manrope;margin:10px 0}.window-copy p{font-size:9px;color:#899087;line-height:1.6}.mini-button{display:inline-block;background:var(--green);color:white;padding:7px 10px;font-size:8px;margin-top:8px}.chart{height:178px;background:#eef1e9;position:relative;overflow:hidden}.chart svg{width:100%;height:100%}.float-card{position:absolute;right:3%;bottom:9%;background:var(--green);color:white;padding:15px 18px;width:148px;box-shadow:0 14px 35px #203e2c20}.float-card .mono{color:#c6d6c8;font-size:9px}.float-card strong{font:600 25px Manrope;display:block;margin:4px 0}.float-card span:last-child{font-size:10px;color:#d4e0d5}.side-stamp{position:absolute;left:4%;bottom:7%;width:66px;height:66px;border:1px solid #b7c1b2;border-radius:50%;display:grid;place-items:center;color:var(--green);font:10px "DM Mono";text-align:center;transform:rotate(-12deg)}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line)}.metric{padding:25px 20px 26px;border-right:1px solid var(--line)}.metric:first-child{padding-left:0}.metric:last-child{border-right:0}.metric strong{display:block;font:600 26px Manrope;letter-spacing:-.06em}.metric span{font-size:12px;color:var(--muted)}
+section{padding:96px 0;border-bottom:1px solid var(--line)}.section-head{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:38px}.section-head h2{font:600 clamp(34px,4.2vw,52px)/1.08 Manrope;letter-spacing:-.065em;margin:15px 0 0;max-width:650px}.section-head p{max-width:340px;font-size:13px;color:var(--muted);margin:0}.section-number{font:11px "DM Mono";color:#8a9589}
+.stores-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:24px}.feature-store{background:var(--green);color:#f8f8ef;padding:30px;min-height:355px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}.feature-store:after{content:"";position:absolute;width:270px;height:270px;border:1px solid #ffffff27;border-radius:50%;right:-70px;bottom:-80px;box-shadow:0 0 0 32px #ffffff0a,0 0 0 64px #ffffff08}.feature-store .eyebrow{color:#c9d7c8}.feature-store h3{font:600 35px/1.1 Manrope;letter-spacing:-.06em;max-width:330px;margin:26px 0 14px;position:relative;z-index:1}.feature-store p{font-size:13px;color:#d1ddd1;max-width:310px;position:relative;z-index:1}.feature-bottom{display:flex;align-items:center;justify-content:space-between;border-top:1px solid #ffffff30;padding-top:16px;font-size:11px;color:#d1ddd1;position:relative;z-index:1}.store-list{border-top:1px solid var(--line)}.store-row{display:grid;grid-template-columns:44px 1fr auto;gap:13px;align-items:center;padding:14px 5px;border-bottom:1px solid var(--line)}.store-code{width:38px;height:38px;background:#e6e9df;display:grid;place-items:center;font:11px "DM Mono";color:var(--green)}.store-row h4{margin:0;font-size:13px;font-weight:700}.store-link{display:inline-flex;align-items:center;gap:7px}.store-link span{font-size:12px;color:#829082;transition:transform .2s}.store-link:hover{color:var(--green);text-decoration:underline;text-underline-offset:3px}.store-link:hover span{transform:translate(2px,-2px)}.store-row p{margin:3px 0 0;font-size:11px;color:var(--muted)}.store-region{font:10px "DM Mono";color:#738073}
+.capability-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.capability{padding:22px;border:1px solid var(--line);min-height:205px;background:#f8f7f1}.cap-icon{width:34px;height:34px;border:1px solid #b9c8b8;color:var(--green);display:grid;place-items:center;margin-bottom:28px;font-size:16px}.capability h3{font:600 16px Manrope;letter-spacing:-.03em;margin:0 0 8px}.capability p{font-size:12px;color:var(--muted);margin:0}
+.automation-list{border-top:1px solid var(--line)}.automation-item{display:grid;grid-template-columns:55px 1fr 1fr;gap:28px;padding:25px 0;border-bottom:1px solid var(--line);align-items:start}.auto-num{font:11px "DM Mono";color:#7d8b7d;padding-top:5px}.auto-title h3{font:600 20px Manrope;letter-spacing:-.04em;margin:0 0 8px}.auto-title p{font-size:12px;color:var(--muted);margin:0;max-width:330px}.flow{display:grid;grid-template-columns:1fr 28px 1fr;gap:8px;align-items:center}.flow-box{padding:13px;background:#e9ece3;min-height:62px}.flow-box span{font:9px "DM Mono";text-transform:uppercase;color:#6c7c6c;display:block;margin-bottom:5px}.flow-box strong{font-size:11px;line-height:1.4;display:block}.flow-arrow{text-align:center;color:var(--green)}
+.project-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}.project{grid-column:span 3;border:1px solid var(--line);background:var(--white);padding:25px;display:flex;flex-direction:column;min-height:300px;transition:transform .2s,border-color .2s}.project:hover{transform:translateY(-3px);border-color:#a7b9a7}.project.wide{grid-column:span 6;display:grid;grid-template-columns:1fr .85fr;gap:32px;min-height:280px;background:#e8ebe2}.project-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}.project-icon{width:38px;height:38px;background:#e6eae0;color:var(--green);display:grid;place-items:center;font-size:17px}.project-status{font:9px "DM Mono";text-transform:uppercase;color:#6d826a;border:1px solid #c9d5c4;padding:5px 8px}.project h3{font:600 24px Manrope;letter-spacing:-.05em;margin:0 0 10px}.project p{font-size:13px;color:var(--muted);margin:0;max-width:500px}.project .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:26px}.tag{font-size:9px;border:1px solid var(--line);padding:5px 7px;color:#657066;letter-spacing:.04em}.project.wide .project-art{background:#d7dfd1;min-height:200px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}.dashboard{background:#f8f8f2;border:1px solid #cdd5c8;width:82%;padding:15px;transform:rotate(2deg);box-shadow:0 15px 25px #263d2b12}.dash-head{display:flex;justify-content:space-between;font:9px "DM Mono";padding-bottom:10px;border-bottom:1px solid #dce2d8}.dash-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:12px 0}.dash-stat{background:#e9eee4;padding:10px 7px}.dash-stat span{font:7px "DM Mono";color:#71816f;display:block}.dash-stat strong{font:600 15px Manrope}.dash-lines{display:flex;align-items:end;gap:5px;height:65px;border-bottom:1px solid #cbd5c7;padding:0 8px}.dash-lines i{flex:1;background:#71917b;height:var(--h);opacity:.85}.project-footer{font:10px "DM Mono";color:#778277;margin-top:25px}
+.stack-wrap{display:grid;grid-template-columns:.65fr 1.35fr;gap:70px}.stack-wrap h2{font:600 42px/1.05 Manrope;letter-spacing:-.065em;margin:15px 0}.stack-wrap p{font-size:13px;color:var(--muted)}.stack-groups{display:grid;grid-template-columns:1fr 1fr;gap:0 34px}.stack-group{padding:19px 0;border-top:1px solid var(--line)}.stack-group h3{font:11px "DM Mono";text-transform:uppercase;letter-spacing:.08em;color:var(--green);margin:0 0 12px}.stack-group p{font-size:13px;color:#48554c;line-height:1.9;margin:0}
+.contact{padding:90px 0;background:var(--green);color:#f7f7ef;border-bottom:0}.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:end}.contact .eyebrow{color:#d0ddca}.contact h2{font:600 clamp(42px,6vw,72px)/1.02 Manrope;letter-spacing:-.075em;margin:20px 0}.contact p{color:#d0ddd2;font-size:14px;max-width:490px}.contact-links{border-top:1px solid #ffffff3d}.contact-link{display:flex;justify-content:space-between;align-items:center;padding:17px 0;border-bottom:1px solid #ffffff3d;font-size:14px}.contact-link span:last-child{font-size:18px}.contact-link:hover{color:var(--lime)}.footer{background:var(--green);color:#c5d2c7;padding:18px 0;border-top:1px solid #ffffff30;font-size:10px}.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.footer a{text-decoration:underline;text-underline-offset:3px}
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}.about-grid h2{font:600 clamp(34px,4.2vw,52px)/1.08 Manrope;letter-spacing:-.065em;margin:15px 0 0}.about-copy p{font-size:17px;line-height:1.8;color:#4e5a52;margin:0 0 18px}.about-copy p:first-child{font-size:20px;color:var(--ink);line-height:1.6}.focus-list{display:grid;grid-template-columns:1fr 1fr;gap:0 28px;margin-top:30px;border-top:1px solid var(--line)}.focus-item{padding:15px 0;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:center;font-size:14px;font-weight:600}.focus-item span{width:30px;height:30px;flex:none;display:grid;place-items:center;background:var(--green2);color:var(--green);font-size:14px}
+@media(max-width:850px){.about-grid{grid-template-columns:1fr;gap:24px}}
+@media(max-width:620px){.about-copy p{font-size:15px}.about-copy p:first-child{font-size:17px}.focus-list{grid-template-columns:1fr}}
+@media(max-width:850px){.hero-grid{grid-template-columns:1fr;gap:40px}.hero{padding-top:60px}.hero-art{min-height:390px}.stores-layout,.stack-wrap{grid-template-columns:1fr;gap:16px}.capability-grid{grid-template-columns:repeat(2,1fr)}.section-head{align-items:start;flex-direction:column;gap:15px}.contact-grid{grid-template-columns:1fr;gap:30px}.automation-item{grid-template-columns:35px 1fr;gap:15px}.flow{grid-column:2}.stack-wrap{gap:20px}.stack-wrap h2{max-width:500px}}
+@media(max-width:620px){.wrap{width:min(100% - 32px,1160px)}.nav{height:65px}.menu-btn{display:block}.navlinks{display:none;position:absolute;top:64px;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--line);padding:18px 24px 24px;flex-direction:column;align-items:stretch;gap:18px}.navlinks.open{display:flex}.nav-cta{display:inline-flex;justify-content:center}.hero{padding:48px 0 45px}.hero h1{font-size:49px}.intro{font-size:15px}.hero-art{min-height:330px;padding:15px}.art-window{left:8%;right:8%;top:18%;bottom:13%;padding:15px}.window-copy h3{font-size:19px}.chart{height:135px}.float-card{right:2%;bottom:7%;width:120px;padding:10px}.float-card strong{font-size:20px}.side-stamp{width:52px;height:52px;font-size:8px;left:2%}.metrics{grid-template-columns:1fr 1fr}.metric{padding:18px 12px;border-bottom:1px solid var(--line)}.metric:first-child{padding-left:0}.metric:nth-child(2){border-right:0}.metric strong{font-size:23px}section{padding:65px 0}.section-head h2{font-size:37px}.feature-store{min-height:300px;padding:24px}.feature-store h3{font-size:31px}.store-row{grid-template-columns:38px 1fr auto;gap:9px}.store-row h4{font-size:12px}.store-row p{font-size:10px}.store-region{font-size:9px}.capability-grid{gap:8px}.capability{padding:15px;min-height:190px}.capability h3{font-size:14px}.capability p{font-size:11px}.automation-item{grid-template-columns:25px 1fr;gap:12px}.flow{grid-template-columns:1fr 18px 1fr;gap:5px}.flow-box{padding:10px 8px}.flow-box strong{font-size:10px}.project-grid{display:block}.project{margin-bottom:10px;min-height:270px;padding:20px}.project.wide{display:flex}.project.wide .project-art{order:-1;min-height:180px;margin-bottom:22px}.project h3{font-size:22px}.stack-groups{grid-template-columns:1fr;gap:0}.contact{padding:65px 0}.contact h2{font-size:48px}.footer-inner{flex-direction:column}.navlinks a{padding:3px 0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+  </style>
 </head>
-<body class="bg-dark-bg text-slate-300 font-sans selection:bg-neon-blue selection:text-white overflow-x-hidden">
-
-    <!-- Moving Background Elements -->
-    <div class="fixed inset-0 w-full h-full overflow-hidden -z-10">
-        <div class="absolute top-0 left-1/4 w-96 h-96 bg-neon-blue rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob"></div>
-        <div class="absolute top-0 right-1/4 w-96 h-96 bg-neon-purple rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob animation-delay-2000"></div>
-        <div class="absolute -bottom-32 left-1/3 w-96 h-96 bg-emerald-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob animation-delay-4000"></div>
+<body>
+<header class="topbar">
+  <nav class="nav wrap" aria-label="Main navigation">
+    <a class="brand" href="#home" aria-label="Thabang home"><span class="brand-mark">T.</span><span>Thabang<span style="color:#829082">.</span></span></a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navlinks">Menu ☰</button>
+    <div class="navlinks" id="navlinks">
+      <a href="#about">About</a><a href="#stores">Stores</a><a href="#automation">Automation</a><a href="#work">Web apps</a><a href="#stack">Toolkit</a><a class="nav-cta" href="#contact">Start a conversation ↗</a>
     </div>
-
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-dark-bg/80 backdrop-blur-md border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex-shrink-0">
-                    <span class="font-mono text-xl font-bold text-white tracking-tighter">&lt;HN/&gt;</span>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#home" class="hover:text-neon-blue transition-colors px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                        <a href="#about" class="hover:text-neon-blue transition-colors px-3 py-2 rounded-md text-sm font-medium">About</a>
-                        <a href="#skills" class="hover:text-neon-blue transition-colors px-3 py-2 rounded-md text-sm font-medium">Skills</a>
-                        <a href="#experience" class="hover:text-neon-blue transition-colors px-3 py-2 rounded-md text-sm font-medium">Experience</a>
-                        <a href="#contact" class="bg-neon-blue/10 text-neon-blue hover:bg-neon-blue hover:text-white transition-all px-4 py-2 rounded-md text-sm font-medium border border-neon-blue/50">Let's Talk</a>
-                    </div>
-                </div>
-            </div>
+  </nav>
+</header>
+<main>
+  <section class="hero" id="home" style="border-bottom:0">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Software engineering · AI automation</div>
+        <h1>I build digital systems that <em>do the work.</em></h1>
+        <p class="intro">Software engineer and automation specialist building ecommerce experiences, web applications and practical systems that connect the moving parts of a business.</p>
+        <div class="actions"><a class="btn" href="#contact">Have a project? <span class="arrow">↗</span></a><a class="btn secondary" href="#work">Explore selected work <span class="arrow">↓</span></a></div>
+        <div class="hero-note"><span>Based in South Africa · Working across markets and time zones</span></div>
+      </div>
+      <div class="hero-art" aria-label="Illustration of a clean ecommerce analytics dashboard">
+        <div class="art-top"><span>Selected systems / 2026</span><span>01 — 04</span></div>
+        <div class="art-window">
+          <div class="window-head"><span class="window-logo">store / operations</span><span class="window-dots"><i></i><i></i><i></i></span></div>
+          <div class="window-body">
+            <div class="window-copy"><small>One connected view</small><h3>Less manual work.<br>Better visibility.</h3><p>Storefronts, inventory and workflows, working together.</p><span class="mini-button">View operations ↗</span></div>
+            <div class="chart"><svg viewBox="0 0 230 180" role="img" aria-label="Illustrative rising data chart"><g stroke="#d8dfd3" stroke-width="1"><path d="M0 35H230M0 70H230M0 105H230M0 140H230"/></g><path d="M0 142 C25 126 28 132 48 108 S80 113 96 85 S127 98 147 62 S181 76 198 37 S220 45 230 19 L230 180 L0 180Z" fill="#c9d9c7" opacity=".7"/><path d="M0 142 C25 126 28 132 48 108 S80 113 96 85 S127 98 147 62 S181 76 198 37 S220 45 230 19" fill="none" stroke="#315b43" stroke-width="3"/><circle cx="198" cy="37" r="4" fill="#f8f8f1" stroke="#315b43" stroke-width="2"/></svg></div>
+          </div>
         </div>
-    </nav>
+        <div class="side-stamp">BUILD<br>WITH<br>INTENT</div>
+        <div class="float-card"><span class="mono">FOCUS</span><strong>End to end</strong><span>From workflow to release</span></div>
+      </div>
+    </div>
+  </section>
+  <div class="wrap metrics" aria-label="Portfolio overview">
+    <div class="metric"><strong>8</strong><span>Shopify stores across markets</span></div>
+    <div class="metric"><strong>5+</strong><span>Years building software</span></div>
+    <div class="metric"><strong>Full-stack</strong><span>From interface to infrastructure</span></div>
+    <div class="metric"><strong>AI + code</strong><span>Automation with practical outcomes</span></div>
+  </div>
 
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center pt-16 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-start justify-center">
-            <p class="font-mono text-neon-blue mb-4 reveal">Hi, my name is</p>
-            <h1 class="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight reveal" style="transition-delay: 100ms;">
-                Happy Nkanyane.
-            </h1>
-            <h2 class="text-4xl md:text-6xl font-bold text-slate-400 mb-6 reveal" style="transition-delay: 200ms;">
-                I transform ideas into scalable digital solutions.
-            </h2>
-            <p class="max-w-xl text-lg text-slate-400 mb-8 leading-relaxed reveal" style="transition-delay: 300ms;">
-                I'm a <span class="text-white font-semibold">software engineer</span> who believes clean code is a <span class="text-neon-blue">love language</span> and design patterns are poetry <span class="text-slate-300 italic">(fight me)</span>. I specialize in <span class="text-white font-semibold">PHP</span>, work comfortably in Python and JavaScript, and have a dangerous curiosity for <span class="text-neon-blue">AI and emerging tech</span>. Based in <span class="text-white">Cape Town</span>, building systems that scale while maintaining my reputation as <span class="text-slate-300 italic">'that person who actually reads documentation.'</span>
-            </p>
-            <div class="flex gap-4 reveal" style="transition-delay: 400ms;">
-                <a href="#contact" class="px-8 py-3 bg-neon-blue text-white rounded font-medium hover:bg-blue-600 transition-all shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] transform hover:-translate-y-1">
-                    Get in Touch
-                </a>
-                <a href="https://medium.com/@hthabang23" target="_blank" class="px-8 py-3 border border-slate-600 rounded font-medium hover:border-neon-blue hover:text-neon-blue transition-all">
-                    Read my Articles
-                </a>
-            </div>
+  <section id="about">
+    <div class="wrap about-grid">
+      <div><div class="eyebrow">About me</div><h2>Practical software that takes work off your team.</h2></div>
+      <div class="about-copy">
+        <p>I&rsquo;m a Full-Stack Developer and AI Enabler who helps businesses build AI agents, automated workflows, ecommerce stores and connected systems that reduce repetitive work and improve how teams operate.</p>
+        <p>On the ecommerce side, I build and run Shopify storefronts across multiple countries, from themes and product pages to catalogue, stock data and the integrations that keep everything in sync.</p>
+        <p>I work with Laravel (PHP) and Python to create tools that make daily tasks easier, connect different platforms, and let teams focus on what really matters. I enjoy turning complex problems into practical, working software solutions.</p>
+        <div class="focus-list">
+          <div class="focus-item"><span>◎</span>AI agents</div>
+          <div class="focus-item"><span>⇄</span>Automated workflows</div>
+          <div class="focus-item"><span>↗</span>Shopify &amp; ecommerce</div>
+          <div class="focus-item"><span>▦</span>Connected systems</div>
         </div>
-        
-        <!-- Animated Scroll Down Indicator -->
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-slate-500">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="stores">
+    <div class="wrap">
+      <div class="section-head"><div><div class="eyebrow">01 / Ecommerce systems</div><h2>One brand. Multiple markets. One connected operation.</h2></div><p>Building and supporting Shopify storefronts for Kinara International across Australia, New Zealand, Japan, Taiwan and the Netherlands.</p></div>
+      <div class="stores-layout">
+        <article class="feature-store">
+          <div><div class="eyebrow">Kinara International Ltd</div><h3>Commerce built for the way each market shops.</h3><p>Localised storefronts, shared product operations and safer releases, with the data workflows behind the scenes.</p></div>
+          <div class="feature-bottom"><span>SHOPIFY · MULTI-MARKET</span><span>8 STORES ↗</span></div>
+        </article>
+        <div class="store-list" aria-label="Shopify stores">
+          <div class="store-row"><span class="store-code">UA</span><div><h4><a class="store-link" href="https://ubereatskit-anz.myshopify.com" target="_blank" rel="noreferrer">UberEatsKit Australia <span aria-hidden="true">↗</span></a></h4><p class="store-hint">Open storefront</p></div><span class="store-region">AU</span></div>
+          <div class="store-row"><span class="store-code">US</span><div><h4><a class="store-link" href="https://uber-eats-sustainable.myshopify.com" target="_blank" rel="noreferrer">Uber Eats sustainable <span aria-hidden="true">↗</span></a></h4><p class="store-hint">Open storefront</p></div><span class="store-region">GLOBAL</span></div>
+          <div class="store-row"><span class="store-code">UNZ</span><div><h4><a class="store-link" href="https://uber-nz.myshopify.com" target="_blank" rel="noreferrer">Uber New Zealand <span aria-hidden="true">↗</span></a></h4><p class="store-hint">Open storefront</p></div><span class="store-region">NZ</span></div>
+          <div class="store-row"><span class="store-code">DT</span><div><h4><a class="store-link" href="https://development-testing-uber-marketplace.myshopify.com" target="_blank" rel="noreferrer">Development testing <span aria-hidden="true">↗</span></a></h4><p class="store-hint">Open storefront</p></div><span class="store-region">QA</span></div>
+          <div class="store-row"><span class="store-code">UP</span><div><h4><a class="store-link" href="https://uber-eats-anz-backend-portal.myshopify.com" target="_blank" rel="noreferrer">Uber Eats ANZ Backend portal <span aria-hidden="true">↗</span></a></h4><p class="store-hint">Open storefront</p></div><span class="store-region">OPS</span></div>
+          <div class="store-row"><span class="store-code">UET</span><div><h4><a class="store-link" href="https://uber-eats-taiwan.myshopify.com" target="_blank" rel="noreferrer">Uber Eats Taiwan <span aria-hidden="true">↗</span></a></h4><p class="store-hint">Open storefront</p></div><span class="store-region">TW</span></div>
+          <div class="store-row"><span class="store-code">UBE</span><div><h4><a class="store-link" href="https://ubereatskit-japan.myshopify.com" target="_blank" rel="noreferrer">Ubereatskit Japan <span aria-hidden="true">↗</span></a></h4><p class="store-hint">Open storefront</p></div><span class="store-region">JP</span></div>
+          <div class="store-row"><span class="store-code">UN</span><div><h4><a class="store-link" href="https://ubereats-nl.myshopify.com" target="_blank" rel="noreferrer">UberEats Netherlands <span aria-hidden="true">↗</span></a></h4><p class="store-hint">Open storefront</p></div><span class="store-region">NL</span></div>
         </div>
-    </section>
+      </div>
+      <div style="margin-top:24px" class="capability-grid">
+        <article class="capability"><div class="cap-icon">↗</div><h3>Store builds & themes</h3><p>Storefronts and product pages aligned to a global brand, adapted for local customers.</p></article>
+        <article class="capability"><div class="cap-icon">文</div><h3>Localised storefronts</h3><p>English, Japanese, Traditional Chinese and Dutch market experiences.</p></article>
+        <article class="capability"><div class="cap-icon">▦</div><h3>Catalogue & inventory</h3><p>Bulk product and stock updates using Matrixify and Google Sheets, tied to warehouse data.</p></article>
+        <article class="capability"><div class="cap-icon">✓</div><h3>Safer releases</h3><p>Testing storefronts and backend tooling to check changes before customers see them.</p></article>
+      </div>
+    </div>
+  </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-24 bg-white/5 backdrop-blur-sm border-y border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="reveal">
-                    <div class="flex items-center gap-2 mb-4">
-                        <span class="text-neon-blue font-mono">01.</span>
-                        <h2 class="text-3xl font-bold text-white">About Me</h2>
-                        <div class="h-px bg-slate-700 w-1/3 ml-4"></div>
-                    </div>
-                    <p class="text-slate-400 mb-4 text-lg">
-                        I'm a professional software engineer passionate about <span class="text-white">design patterns</span> and crafting solutions that actually work in production. My journey has taken me through various stacks and countless deployments from <span class="text-white">modern PHP/Laravel applications</span> to systems that keep me up at night (in a good way, mostly).
-                    </p>
-                    <p class="text-slate-400 mb-6 text-lg">
-                        Currently, I'm exploring the wild intersection of traditional software engineering and AI. I write about running <span class="text-neon-blue">LLMs locally</span> and integrating AI agents into web architectures because who needs a normal GPU budget anyway?
-                    </p>
-                    <div class="font-mono text-sm text-neon-blue space-y-3">
-                        <p>> Current Location: Cape Town, SA</p>
-                        <div class="flex items-center gap-3">
-                            <span>> Status:</span>
-                            <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 shadow-[0_0_15px_rgba(16,185,129,0.2)]">
-                                <span class="relative flex h-2.5 w-2.5">
-                                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-                                </span>
-                                <span class="text-emerald-400 text-xs font-semibold tracking-wide">AVAILABLE</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="relative group bg-[rgba(85,112,215,0.6)] shadow-[0_0_15px_rgba(85,112,215,0.5)] reveal" style="transition-delay: 200ms;">
-                    <div class="absolute inset-0 border-2 border-[rgba(85,112,215,0.6)] shadow-[0_0_15px_rgba(85,112,215,0.4)] transform translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-300"></div>
-                        <div class="relative bg-[rgba(85,112,215,0.6)] brightness-150 rounded p-1 overflow-hidden">
-                        <div class="bg-gradient-to-br from-slate-700 to-slate-900 w-full flex items-center justify-center">
-                                <img class="w-full h-auto" src="my_pic.jpg" alt="">
-                            </div>
-                        </div>
-                    </div>
-            </div>
-        </div>
-    </section>
+  <section id="automation">
+    <div class="wrap">
+      <div class="section-head"><div><div class="eyebrow">02 / Workflow automation</div><h2>Give repetitive work to systems, not people.</h2></div><p>Practical automations that move information between tools, surface the exceptions and leave people with clearer decisions.</p></div>
+      <div class="automation-list">
+        <article class="automation-item"><div class="auto-num">01</div><div class="auto-title"><h3>Warehouse data sync</h3><p>Collects logistics files from SFTP servers in Australia and New Zealand and organises them in Google Drive for reporting.</p></div><div class="flow"><div class="flow-box"><span>Input</span><strong>SFTP logistics files</strong></div><div class="flow-arrow">→</div><div class="flow-box"><span>Output</span><strong>Structured Drive folders</strong></div></div></article>
+        <article class="automation-item"><div class="auto-num">02</div><div class="auto-title"><h3>Stock alerts</h3><p>Watches inventory figures in Google Sheets and alerts the team in Slack when stock needs attention.</p></div><div class="flow"><div class="flow-box"><span>Input</span><strong>Inventory in Sheets</strong></div><div class="flow-arrow">→</div><div class="flow-box"><span>Output</span><strong>Slack stock alerts</strong></div></div></article>
+        <article class="automation-item"><div class="auto-num">03</div><div class="auto-title"><h3>Industry news pipeline</h3><p>Scores delivery-industry news by keyword relevance and prepares LinkedIn post drafts for review.</p></div><div class="flow"><div class="flow-box"><span>Input</span><strong>News & relevance rules</strong></div><div class="flow-arrow">→</div><div class="flow-box"><span>Output</span><strong>Drafts sent to Slack</strong></div></div></article>
+        <article class="automation-item"><div class="auto-num">04</div><div class="auto-title"><h3>AI agent teams</h3><p>Coordinates product, backend, frontend, QA and UX tasks through multi-agent Claude Code workflows.</p></div><div class="flow"><div class="flow-box"><span>Input</span><strong>Product requirements</strong></div><div class="flow-arrow">→</div><div class="flow-box"><span>Output</span><strong>Plan, build & test loops</strong></div></div></article>
+      </div>
+    </div>
+  </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="mb-12 reveal">
-                <div class="flex items-center gap-2 mb-4">
-                    <span class="text-neon-blue font-mono">02.</span>
-                    <h2 class="text-3xl font-bold text-white">Technical Arsenal</h2>
-                    <div class="h-px bg-slate-700 w-1/3 ml-4"></div>
-                </div>
-            </div>
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head"><div><div class="eyebrow">03 / Selected products</div><h2>Useful software, built from the ground up.</h2></div><p>Web products, operational APIs and customer-facing platforms, with the engineering details chosen to fit the job.</p></div>
+      <div class="project-grid">
+        <article class="project wide">
+          <div><div class="project-top"><span class="project-icon">◉</span><span class="project-status">Live product</span></div><h3>Hapifans</h3><p>A free-to-play sports prediction platform I run. Fans make predictions and compete around match days. The build and maintenance process uses AI agents across product, backend, frontend, UX and QA.</p><div class="tags"><span class="tag">Laravel</span><span class="tag">Livewire</span><span class="tag">Alpine.js</span><span class="tag">Tailwind</span><span class="tag">AWS</span><span class="tag">Playwright</span></div></div>
+          <div class="project-art" aria-label="Illustrative sports platform dashboard"><div class="dashboard"><div class="dash-head"><span>HAPIFANS / MATCH CENTRE</span><span>LIVE VIEW</span></div><div class="dash-stats"><div class="dash-stat"><span>PLAYERS</span><strong>2,480</strong></div><div class="dash-stat"><span>PREDICTIONS</span><strong>8,120</strong></div><div class="dash-stat"><span>LEAGUE</span><strong>#04</strong></div></div><div class="dash-lines"><i style="--h:34%"></i><i style="--h:55%"></i><i style="--h:43%"></i><i style="--h:78%"></i><i style="--h:62%"></i><i style="--h:92%"></i><i style="--h:73%"></i><i style="--h:100%"></i><i style="--h:83%"></i><i style="--h:90%"></i></div></div></div>
+        </article>
+        <article class="project"><div class="project-top"><span class="project-icon">▤</span><span class="project-status">Operations</span></div><h3>Stock management API</h3><p>Ingests warehouse data from Australia and New Zealand into a central API so storefronts can work from consistent stock figures.</p><div class="tags"><span class="tag">Laravel</span><span class="tag">PHP 8</span><span class="tag">AWS</span><span class="tag">Postman</span></div><div class="project-footer">DATA INTEGRATION / API</div></article>
+        <article class="project"><div class="project-top"><span class="project-icon">⌖</span><span class="project-status">In progress</span></div><h3>Ride-hailing platform</h3><p>Rider and driver apps for a South African startup, including payments, live maps and an SOS safety module.</p><div class="tags"><span class="tag">Flutter</span><span class="tag">Firebase</span><span class="tag">Google Maps</span></div><div class="project-footer">MOBILE / LOCATION / PAYMENTS</div></article>
+        <article class="project"><div class="project-top"><span class="project-icon">▣</span><span class="project-status">Booking system</span></div><h3>Tutoring booking system</h3><p>Booking flow for physical and online classes, with admin approval and filters by subject, month and date.</p><div class="tags"><span class="tag">PHP</span><span class="tag">MySQL</span></div><div class="project-footer">BOOKING / ADMIN WORKFLOWS</div></article>
+        <article class="project"><div class="project-top"><span class="project-icon">↗</span><span class="project-status">Ecommerce</span></div><h3>Mankind Kulture</h3><p>A menswear storefront for premium golfers and tees, with WhatsApp-based ordering built into the customer journey.</p><div class="tags"><span class="tag">Ecommerce</span><span class="tag">WhatsApp commerce</span></div><div class="project-footer">STOREFRONT / COMMERCE</div></article>
+      </div>
+    </div>
+  </section>
 
-           <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <!-- Skill Cards -->
-                <div class="p-6 bg-slate-800/50 border border-white/5 rounded hover:border-neon-blue/50 hover:bg-slate-800 transition-all group reveal hover:-translate-y-2">
-                    <div class="text-neon-blue text-3xl mb-4 font-mono"><i class="fa-brands fa-php"></i></div>
-                    <h3 class="text-white font-semibold mb-2">PHP</h3>
-                    <p class="text-sm text-slate-400">Laravel, CodeIgniter, Symfony</p>
-                </div>
-                <div class="p-6 bg-slate-800/50 border border-white/5 rounded hover:border-neon-blue/50 hover:bg-slate-800 transition-all group reveal hover:-translate-y-2" style="transition-delay: 100ms;">
-                    <div class="text-neon-purple text-3xl mb-4 font-mono"><i class="fa-brands fa-python"></i></div>
-                    <h3 class="text-white font-semibold mb-2">Python</h3>
-                    <p class="text-sm text-slate-400">Django, FastAPI, Flask</p>
-                </div>
-                <div class="p-6 bg-slate-800/50 border border-white/5 rounded hover:border-neon-blue/50 hover:bg-slate-800 transition-all group reveal hover:-translate-y-2" style="transition-delay: 200ms;">
-                    <div class="text-yellow-400 text-3xl mb-4 font-mono"><i class="fa-brands fa-js"></i></div>
-                    <h3 class="text-white font-semibold mb-2">JavaScript</h3>
-                    <p class="text-sm text-slate-400">Node.js, Next.js, Vue</p>
-                </div>
-                <div class="p-6 bg-slate-800/50 border border-white/5 rounded hover:border-neon-blue/50 hover:bg-slate-800 transition-all group reveal hover:-translate-y-2" style="transition-delay: 300ms;">
-                    <div class="text-emerald-400 text-3xl mb-4 font-mono"><i class="fa-solid fa-brain"></i></div>
-                    <h3 class="text-white font-semibold mb-2">AI & LLMs</h3>
-                    <p class="text-sm text-slate-400">Ollama, RAG, LangChain, OpenAI</p>
-                </div>
-                <div class="p-6 bg-slate-800/50 border border-white/5 rounded hover:border-neon-blue/50 hover:bg-slate-800 transition-all group reveal hover:-translate-y-2" style="transition-delay: 400ms;">
-                    <div class="text-orange-400 text-3xl mb-4 font-mono"><i class="fa-brands fa-aws"></i></div>
-                    <h3 class="text-white font-semibold mb-2">DevOps & Cloud</h3>
-                    <p class="text-sm text-slate-400">Docker, AWS, CI/CD, Server Management</p>
-                </div>
-                <div class="p-6 bg-slate-800/50 border border-white/5 rounded hover:border-neon-blue/50 hover:bg-slate-800 transition-all group reveal hover:-translate-y-2" style="transition-delay: 500ms;">
-                    <div class="text-blue-400 text-3xl mb-4 font-mono"><i class="fa-solid fa-database"></i></div>
-                    <h3 class="text-white font-semibold mb-2">Databases</h3>
-                    <p class="text-sm text-slate-400">MySQL, PostgreSQL, MongoDB, Redis</p>
-                </div>
-                <div class="p-6 bg-slate-800/50 border border-white/5 rounded hover:border-neon-blue/50 hover:bg-slate-800 transition-all group reveal hover:-translate-y-2" style="transition-delay: 600ms;">
-                    <div class="text-slate-400 text-3xl mb-4 font-mono"><i class="fa-solid fa-code"></i></div>
-                    <h3 class="text-white font-semibold mb-2">Dev Tools</h3>
-                    <p class="text-sm text-slate-400">Git, VS Code, Postman, Linux</p>
-                </div>
-                <div class="p-6 bg-slate-800/50 border border-white/5 rounded hover:border-neon-blue/50 hover:bg-slate-800 transition-all group reveal hover:-translate-y-2" style="transition-delay: 700ms;">
-                    <div class="text-pink-400 text-3xl mb-4 font-mono"><i class="fa-solid fa-cube"></i></div>
-                    <h3 class="text-white font-semibold mb-2">Architecture</h3>
-                    <p class="text-sm text-slate-400">Design Patterns, REST APIs, Microservices</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <section id="stack">
+    <div class="wrap stack-wrap">
+      <div><div class="eyebrow">04 / Engineering toolkit</div><h2>The right tools for the real problem.</h2><p>I work across application code, integrations, cloud infrastructure and automation, choosing technologies around reliability and maintainability.</p></div>
+      <div class="stack-groups">
+        <div class="stack-group"><h3>Ecommerce</h3><p>Shopify · Liquid · Matrixify · WhatsApp commerce</p></div>
+        <div class="stack-group"><h3>Backend & APIs</h3><p>Laravel · PHP · Python · MySQL · REST APIs</p></div>
+        <div class="stack-group"><h3>Frontend</h3><p>Livewire · Alpine.js · Tailwind CSS · JavaScript · Flutter</p></div>
+        <div class="stack-group"><h3>Cloud & DevOps</h3><p>AWS EC2 · RDS · S3 · Lambda · SSM · Cloudflare Workers & Pages</p></div>
+        <div class="stack-group"><h3>Automation & AI</h3><p>Python pipelines · Google Apps Script · Slack integrations · Claude Code agents</p></div>
+        <div class="stack-group"><h3>Delivery</h3><p>Git · Docker · Playwright · Postman · CI/CD · testing workflows</p></div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Insights Section -->
-    <section id="insights" class="py-24 bg-white/5 backdrop-blur-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="mb-12 reveal">
-                <div class="flex items-center gap-2 mb-4">
-                    <span class="text-neon-blue font-mono">03.</span>
-                    <h2 class="text-3xl font-bold text-white">Insights & Writings</h2>
-                    <div class="h-px bg-slate-700 w-1/3 ml-4"></div>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <a href="https://medium.com/@hthabang23" target="_blank" class="group relative block h-full reveal">
-                    <div class="relative h-full bg-slate-800 border border-white/10 p-8 rounded-lg overflow-hidden group-hover:-translate-y-2 transition-transform duration-300">
-                        <div class="flex justify-between items-start mb-6">
-                            <i class="fa-regular fa-folder text-4xl text-neon-blue"></i>
-                            <i class="fa-solid fa-arrow-up-right-from-square text-slate-400 hover:text-neon-blue"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-neon-blue transition-colors">Local LLM Architecture</h3>
-                        <p class="text-slate-400 text-sm mb-4">A comprehensive guide on setting up Ollama and Open WebUI to run models like Deepseek-R1 locally.</p>
-                    </div>
-                </a>
-                <a href="https://medium.com/@hthabang23" target="_blank" class="group relative block h-full reveal" style="transition-delay: 100ms;">
-                    <div class="relative h-full bg-slate-800 border border-white/10 p-8 rounded-lg overflow-hidden group-hover:-translate-y-2 transition-transform duration-300">
-                        <div class="flex justify-between items-start mb-6">
-                            <i class="fa-regular fa-folder text-4xl text-neon-purple"></i>
-                            <i class="fa-solid fa-arrow-up-right-from-square text-slate-400 hover:text-neon-purple"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-neon-purple transition-colors">Repository Pattern in PHP</h3>
-                        <p class="text-slate-400 text-sm mb-4">Deep dive into abstracting data access layers to improve testability.</p>
-                    </div>
-                </a>
-                <a href="https://medium.com/@hthabang23" target="_blank" class="group relative block h-full reveal" style="transition-delay: 200ms;">
-                    <div class="relative h-full bg-slate-800 border border-white/10 p-8 rounded-lg overflow-hidden group-hover:-translate-y-2 transition-transform duration-300">
-                        <div class="flex justify-between items-start mb-6">
-                            <i class="fa-regular fa-folder text-4xl text-emerald-400"></i>
-                            <i class="fa-solid fa-arrow-up-right-from-square text-slate-400 hover:text-emerald-400"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Laravel Session Security</h3>
-                        <p class="text-slate-400 text-sm mb-4">Best practices for securing user sessions and preventing common vulnerabilities.</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- NEW EXPERIENCE SECTION -->
-    <section id="experience" class="py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="mb-16 text-center reveal">
-                <div class="flex items-center justify-center gap-2 mb-4">
-                    <span class="text-neon-blue font-mono">04.</span>
-                    <h2 class="text-3xl font-bold text-white">Work Experience</h2>
-                </div>
-                <div class="h-1 w-20 bg-neon-blue mx-auto rounded"></div>
-            </div>
-
-            <div class="max-w-4xl mx-auto reveal">
-                <div class="relative">
-                    <!-- Timeline line -->
-                    <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-0.5 bg-slate-700"></div>
-                    
-                    <!-- Timeline items -->
-                    <div class="space-y-12">
-                        <!-- Item 1 -->
-                        <div class="timeline-item flex flex-col md:flex-row items-center group">
-                            <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right">
-                                <h3 class="text-xl font-bold text-white group-hover:text-neon-blue transition-colors">Senior Software Developer</h3>
-                                <p class="text-neon-blue font-mono text-sm mt-1">Johannesburg Tech Sector</p>
-                                <p class="text-slate-500 text-sm mt-1">2020 - Present</p>
-                            </div>
-                            <div class="w-4 h-4 rounded-full bg-neon-blue border-4 border-dark-bg z-10 shadow-[0_0_10px_rgba(59,130,246,0.6)]"></div>
-                            <div class="md:w-1/2 md:pl-12 mt-6 md:mt-0">
-                                <p class="text-slate-400 text-sm leading-relaxed bg-card-bg p-4 rounded border border-white/5 hover:border-neon-blue/30 transition-colors">
-                                    Lead development of enterprise applications using Java Spring Boot, PHP, and cloud technologies. Mentored junior developers and implemented clean architecture patterns.
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <!-- Item 2 -->
-                        <div class="timeline-item flex flex-col md:flex-row items-center group">
-                            <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right order-2 md:order-1">
-                                <p class="text-slate-400 text-sm leading-relaxed bg-card-bg p-4 rounded border border-white/5 hover:border-neon-blue/30 transition-colors">
-                                    Developed full-stack web applications for various clients. Specialized in creating scalable RESTful APIs and integrating payment gateways.
-                                </p>
-                            </div>
-                            <div class="w-4 h-4 rounded-full bg-neon-purple border-4 border-dark-bg z-10 shadow-[0_0_10px_rgba(139,92,246,0.6)] order-1 md:order-2"></div>
-                            <div class="md:w-1/2 md:pl-12 mt-6 md:mt-0 order-3 md:order-3">
-                                <h3 class="text-xl font-bold text-white group-hover:text-neon-purple transition-colors">Full Stack Developer</h3>
-                                <p class="text-neon-purple font-mono text-sm mt-1">Freelance / Contract</p>
-                                <p class="text-slate-500 text-sm mt-1">2018 - 2020</p>
-                            </div>
-                        </div>
-                        
-                        <!-- Item 3 -->
-                        <div class="timeline-item flex flex-col md:flex-row items-center group">
-                            <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right">
-                                <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">Junior Developer</h3>
-                                <p class="text-emerald-400 font-mono text-sm mt-1">StartUp Environment</p>
-                                <p class="text-slate-500 text-sm mt-1">2016 - 2018</p>
-                            </div>
-                            <div class="w-4 h-4 rounded-full bg-emerald-500 border-4 border-dark-bg z-10 shadow-[0_0_10px_rgba(16,185,129,0.6)]"></div>
-                            <div class="md:w-1/2 md:pl-12 mt-6 md:mt-0">
-                                <p class="text-slate-400 text-sm leading-relaxed bg-card-bg p-4 rounded border border-white/5 hover:border-emerald-400/30 transition-colors">
-                                    Started my career developing front-end interfaces and learning backend technologies. Contributed to multiple projects and gained foundational experience in SQL and Java.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- NEW CONTACT SECTION -->
-    <section id="contact" class="py-24 bg-white/5 backdrop-blur-sm border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="mb-16 text-center reveal">
-                <div class="flex items-center justify-center gap-2 mb-4">
-                    <span class="text-neon-blue font-mono">05.</span>
-                    <h2 class="text-3xl font-bold text-white">Get In Touch</h2>
-                </div>
-                <div class="h-1 w-20 bg-neon-blue mx-auto rounded"></div>
-            </div>
-
-            <div class="max-w-6xl mx-auto reveal">
-                <div class="flex flex-col md:flex-row gap-12">
-                    <!-- Left Column: Info -->
-                    <div class="md:w-1/2">
-                        <h3 class="text-2xl font-bold text-white mb-6">Let's Connect</h3>
-                        <p class="text-slate-400 mb-8 leading-relaxed">
-                            I'm always open to discussing new opportunities, creative ideas, or potential collaborations. Whether you need a consultant for Backend Architecture or just want to chat about AI.
-                        </p>
-                        
-                        <div class="space-y-6">
-                            <!-- Email -->
-                            <div class="flex items-center group">
-                                <div class="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center mr-4 border border-white/10 group-hover:border-neon-blue/50 transition-colors">
-                                    <i data-lucide="mail" class="text-neon-blue w-5 h-5"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-white text-sm">Email</h4>
-                                    <a href="mailto:hthabang23@gmail.com" class="text-slate-400 hover:text-neon-blue transition-colors text-sm">hthabang23@gmail.com</a>
-                                </div>
-                            </div>
-                            
-                            <!-- Location -->
-                            <div class="flex items-center group">
-                                <div class="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center mr-4 border border-white/10 group-hover:border-neon-blue/50 transition-colors">
-                                    <i data-lucide="map-pin" class="text-neon-blue w-5 h-5"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-white text-sm">Location</h4>
-                                    <p class="text-slate-400 text-sm">Cape Town, South Africa</p>
-                                </div>
-                            </div>
-
-                            <!-- Socials -->
-                            <div class="flex space-x-4 mt-8 pt-8 border-t border-white/5">
-                                <a href="https://www.linkedin.com/in/happy-nkanyane/" target="_blank" class="w-10 h-10 bg-slate-800 hover:bg-neon-blue text-white rounded flex items-center justify-center transition-all hover:-translate-y-1">
-                                    <i class="fa-brands fa-linkedin-in"></i>
-                                </a>
-                                <a href="https://github.com" target="_blank" class="w-10 h-10 bg-slate-800 hover:bg-white hover:text-black text-white rounded flex items-center justify-center transition-all hover:-translate-y-1">
-                                    <i class="fa-brands fa-github"></i>
-                                </a>
-                                <a href="https://medium.com/@hthabang23" target="_blank" class="w-10 h-10 bg-slate-800 hover:bg-green-600 text-white rounded flex items-center justify-center transition-all hover:-translate-y-1">
-                                    <i class="fa-brands fa-medium"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Right Column: Form -->
-                    <div class="md:w-1/2">
-                        <form class="bg-card-bg p-8 rounded-xl border border-white/5 shadow-2xl">
-                            <div class="mb-6">
-                                <label for="name" class="block text-slate-400 text-sm mb-2 font-mono">Your Name</label>
-                                <input type="text" id="name" class="w-full px-4 py-3 rounded bg-dark-bg border border-slate-700 text-white focus:outline-none focus:border-neon-blue focus:ring-1 focus:ring-neon-blue transition-all" placeholder="John Doe">
-                            </div>
-                            
-                            <div class="mb-6">
-                                <label for="email" class="block text-slate-400 text-sm mb-2 font-mono">Your Email</label>
-                                <input type="email" id="email" class="w-full px-4 py-3 rounded bg-dark-bg border border-slate-700 text-white focus:outline-none focus:border-neon-blue focus:ring-1 focus:ring-neon-blue transition-all" placeholder="john@example.com">
-                            </div>
-                            
-                            <div class="mb-6">
-                                <label for="message" class="block text-slate-400 text-sm mb-2 font-mono">Your Message</label>
-                                <textarea id="message" rows="4" class="w-full px-4 py-3 rounded bg-dark-bg border border-slate-700 text-white focus:outline-none focus:border-neon-blue focus:ring-1 focus:ring-neon-blue transition-all" placeholder="Hello, I would like to discuss..."></textarea>
-                            </div>
-                            
-                            <button type="button" onclick="alert('Message feature simulated!')" class="w-full bg-neon-blue hover:bg-blue-600 text-white py-3 px-6 rounded font-medium transition-colors shadow-[0_0_20px_rgba(59,130,246,0.2)] hover:shadow-[0_0_30px_rgba(59,130,246,0.4)]">
-                                Send Message <i class="fa-solid fa-paper-plane ml-2"></i>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-6 text-center text-slate-600 text-xs font-mono bg-dark-bg">
-        <p>Designed & Built by Happy Nkanyane</p>
-    </footer>
-
-    <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
-
-        // Scroll Reveal Animation
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px"
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    </script>
+  <section class="contact" id="contact">
+    <div class="wrap contact-grid">
+      <div><div class="eyebrow">05 / Contact</div><h2>Have a real problem to solve?</h2><p>Tell me what you're building, what isn't working, or where your team is losing time. Let's work out a practical way forward.</p><a class="btn" href="mailto:you@example.com" id="emailCta" style="background:#f7f7ef;color:var(--green);border-color:#f7f7ef;margin-top:16px">Start with an email <span class="arrow">↗</span></a></div>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:you@example.com" id="emailLink"><span>Email</span><span>↗</span></a>
+        <a class="contact-link" href="https://wa.me/27000000000" id="whatsappLink" target="_blank" rel="noreferrer"><span>WhatsApp</span><span>↗</span></a>
+        <a class="contact-link" href="https://github.com/your-username" id="githubLink" target="_blank" rel="noreferrer"><span>GitHub</span><span>↗</span></a>
+        <a class="contact-link" href="https://www.linkedin.com/in/your-profile" id="linkedinLink" target="_blank" rel="noreferrer"><span>LinkedIn</span><span>↗</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer"><div class="wrap footer-inner"><span>© <span id="year"></span> Thabang. Built with intent.</span><span>South Africa · Software engineering & automation</span><a href="#home">Back to top ↑</a></div></footer>
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const navlinks = document.getElementById('navlinks');
+  menuBtn.addEventListener('click', () => {
+    const open = navlinks.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.textContent = open ? 'Close ×' : 'Menu ☰';
+  });
+  navlinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    navlinks.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); menuBtn.textContent='Menu ☰';
+  }));
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
